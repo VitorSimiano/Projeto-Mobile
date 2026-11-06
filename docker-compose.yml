@@ -1,0 +1,9 @@
+services:
+  cinefinder:
+    build:
+      context: .
+      args:
+        # O Compose lê esta variável do seu arquivo .env automaticamente
+        TMDB_API_KEY: ${TMDB_API_KEY:?Defina TMDB_API_KEY no arquivo .env}
+    ports:
+      - "8080:80"
